@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,11 @@
     <title>Whatsapp Web</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        /* Your existing CSS styles */
+    </style>
 </head>
+
 <body>
     <div class="container">
         <div class="leftSide">
@@ -18,7 +23,7 @@
                 <ul class="nav_icons">
                     <li><i class="fa-solid fa-circle"></i></li>
                     <li><i class="fa-solid fa-message"></i></li>
-                    <li><i class="fa-solid fa-ellipsis-vertical "></i></li>
+                    <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
                 </ul>
             </div>
             <div class="searchBar">
@@ -27,86 +32,94 @@
                     <input type="text" placeholder="Aratın veya yeni sohbet başlatın" id="searchInput">
                 </div>
             </div>
-            <div class="chatList">
-                <div class="block active">
+            <div class="chatList" id="chatList">
+                <div class="block active" data-user-id="user1">
                     <div class="imgBox"><img src="images/user1.jpg" alt=""></div>
                     <div class="details">
-                        <div class="name"><h4>Kardeşim</h4>
-                        <p class="time">15:16</p>
+                        <div class="name">
+                            <h4>Kardeşim</h4>
+
+                            <p class="time">17:42</p>
                         </div>
                         <div class="shortMessage">
                             <p>Abi seni Çok seviyorum.</p>
-                            
                         </div>
                     </div>
                 </div>
-                <div class="block">
+                <div class="block" data-user-id="user2">
                     <div class="imgBox"><img src="images/user2.jpg" alt=""></div>
                     <div class="details">
-                        <div class="name"><h4>Annem</h4>
-                        <p class="time" style="color: #06d755;">15:16</p>
+                        <div class="name">
+                            <h4>İnsan Kaynakları</h4>
+
+                            <p class="time">17:42</p>
                         </div>
                         <div class="shortMessage">
-                            <p>Gelirken 2 ekmek al eve</p>
-                            <span>3</span>
+                            <p>En sevdiğin film nedir?</p>
                         </div>
                     </div>
                 </div>
-                <div class="block">
+                <div class="block" data-user-id="user3">
                     <div class="imgBox"><img src="images/user3.jpg" alt=""></div>
                     <div class="details">
-                        <div class="name"><h4>Helin Demir</h4>
-                        <p class="time">15:16</p>
+                        <div class="name">
+                            <h4>Helin Demir</h4>
+                            <p class="time">15:16</p>
                         </div>
                         <div class="shortMessage">
-                            <p>Baran bey toplantınız başlamak üzere.</p>
+                            <p>Baran Bey toplantınız başlamak üzere.</p>
                         </div>
                     </div>
                 </div>
-                <div class="block">
+                <div class="block" data-user-id="user4">
                     <div class="imgBox"><img src="images/user4.jpg" alt=""></div>
                     <div class="details">
-                        <div class="name"><h4>Babam</h4>
-                        <p class="time">17:42</p>
+                        <div class="name">
+                            <h4>Babam</h4>
+                            <p class="time">17:42</p>
                         </div>
                         <div class="shortMessage">
                             <p>Oğlum bir şeye ihtiyacın var mı?</p>
                         </div>
                     </div>
                 </div>
-                <div class="block">
+                <div class="block" data-user-id="user5">
                     <div class="imgBox"><img src="images/user5.jpg" alt=""></div>
                     <div class="details">
-                        <div class="name"><h4>Dostum</h4>
-                        <p class="time">18:23</p>
+                        <div class="name">
+                            <h4>Dostum</h4>
+                            <p class="time">18:23</p>
                         </div>
                         <div class="shortMessage">
                             <p>Hafta sonu halı saha maçı var gelecek misin?</p>
                         </div>
                     </div>
                 </div>
-                <div class="block">
+                <div class="block" data-user-id="user6">
                     <div class="imgBox"><img src="images/user6.jpg" alt=""></div>
                     <div class="details">
-                        <div class="name"><h4>Dostum2</h4>
-                        <p class="time">17:03</p>
+                        <div class="name">
+                            <h4>Patron</h4>
+                            <p class="time">17:03</p>
                         </div>
                         <div class="shortMessage">
-                            <p>React projeleri ne alemde?</p>
+                            <p>React projeleri ne alemde</p>
                         </div>
                     </div>
                 </div>
-                <div class="block">
+                <div class="block" data-user-id="user7">
                     <div class="imgBox"><img src="images/user7.jpg" alt=""></div>
                     <div class="details">
-                        <div class="name"><h4>Baran Demir</h4>
-                        <p class="time">16:39</p>
+                        <div class="name">
+                            <h4>Baran Demir</h4>
+                            <p class="time">16:39</p>
                         </div>
                         <div class="shortMessage">
                             <p>Bana yaptığın projeleri atar mısın?</p>
                         </div>
                     </div>
                 </div>
+                <!-- Add more chat blocks as needed -->
             </div>
         </div>
         <div class="rightSide">
@@ -114,31 +127,121 @@
                 <div class="userImg">
                     <img src="images/user1.jpg" class="cover" alt="">
                 </div>
-                <div style="opacity: 0.8; position: absolute; left: 70px;">
-                    Helin Demir
+                <div style="opacity: 0.8; position: absolute; left: 70px;" id="chatUserName">
+                    Kardeşim
                 </div>
                 <ul class="nav_icons">
                     <li><i class="fa-solid fa-magnifying-glass" style="font-size: 17px;"></i></li>
                     <li><i class="fa-solid fa-ellipsis-vertical" style="font-size: 17px;"></i></li>
                 </ul>
             </div>
-            <div class="chatBox">
-                <div class="message myMessage">
-                    <p>Başaracağız Kardeşim! <br><span>12:15</span></p>
-                </div>
-                <div class="message friendMessage">
-                    <p>Abi seni Çok seviyorum. <br><span>12:16</span></p>
-                </div>
+            <div class="chatBox" id="chatMessages">
+                <!-- Chat messages will be dynamically updated here -->
             </div>
             <div class="chatInput">
-                
-                    <a href="#"><i class="fa-regular fa-face-smile"></i></a>
-                    <a href="#"><i class="fa-solid fa-folder-plus"></i></a>
-                    <input type="text" placeholder="Bir mesaj yazın..">
-                    <a href="#"><i class="fa-solid fa-microphone"></i></a>
+                <a href="#"><i class="fa-regular fa-face-smile"></i></a>
+                <a href="#"><i class="fa-solid fa-folder-plus"></i></a>
+                <input type="text" placeholder="Bir mesaj yazın.." id="messageInput">
+                <a href="#" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></a>
             </div>
         </div><!--Chats Side-->
     </div>
-    
+
+    <script>
+        // Sample messages for different users
+        const messages = {
+            user1: [
+                { text: "Başaracağız Kardeşim!", time: "12:15", sender: "me" },
+                { text: "Abi seni Çok seviyorum.", time: "12:16", sender: "friend" }
+            ],
+            user2: [
+                { text: "En sevdiğim film nedir?", time: "15:16", sender: "friend" },
+                { text: "Scarface", time: "15:16", sender: "me" }
+            ],
+            user3: [
+                { text: "Baran Bey toplantınız başlamak üzere", time: "12:16", sender: "friend" }
+            ],
+            user4: [
+                { text: "Oğlum bir şeye ihtiyacın var mı?", time: "15:16", sender: "friend" }
+            ],
+            user5: [
+                { text: "Hafta sonu halı saha maçı var gelecek misin?", time: "12:16", sender: "friend" }
+            ],
+            user6: [
+                { text: "React projeleri ne alemde", time: "15:16", sender: "friend" }
+            ],
+            user7: [
+                { text: "Bana yaptığın projeleri atar mısın?", time: "12:16", sender: "friend" }
+            ]
+            // Add messages for other users similarly
+        };
+
+        // Function to update chat messages based on user ID
+        function updateChat(userId) {
+            const chatMessages = messages[userId];
+            const chatBox = document.getElementById('chatMessages');
+            chatBox.innerHTML = '';
+
+            chatMessages.forEach(message => {
+                const messageElement = document.createElement('div');
+                messageElement.className = message.sender === 'me' ? 'message myMessage' : 'message friendMessage';
+                const [hour, minute] = message.time.split(':');
+                const formattedTime = `${hour}:${minute}`;
+                messageElement.innerHTML = `
+            <p>${message.text}<br><span>${formattedTime}</span></p>
+        `;
+                chatBox.appendChild(messageElement);
+            });
+
+            // Update chat header with user name and profile photo
+            const userName = document.getElementById('chatUserName');
+            userName.innerText = document.querySelector(`.block[data-user-id="${userId}"] .name h4`).innerText;
+            const userImg = document.querySelector('.rightSide .userImg img');
+            userImg.src = document.querySelector(`.block[data-user-id="${userId}"] .imgBox img`).src;
+
+            // Update last message preview and time for the active chat
+            const lastMessage = chatMessages[chatMessages.length - 1];
+            const lastMessagePreview = document.querySelector('.block.active .shortMessage p');
+            lastMessagePreview.innerText = lastMessage.text;
+            const lastMessageTimeElement = document.querySelector('.block.active .time');
+
+            // Format last message time to display only hour and minute
+            const [lastMessageHour, lastMessageMinute] = lastMessage.time.split(':');
+            const formattedLastMessageTime = `${lastMessageHour}:${lastMessageMinute}`;
+            lastMessageTimeElement.innerText = formattedLastMessageTime;
+        }
+
+        // Function to handle click on chat block
+        document.querySelectorAll('.block').forEach(block => {
+            block.addEventListener('click', function () {
+                // Remove 'active' class from all blocks
+                document.querySelectorAll('.block').forEach(b => b.classList.remove('active'));
+                // Add 'active' class to clicked block
+                this.classList.add('active');
+                // Get user ID from data attribute
+                const userId = this.getAttribute('data-user-id');
+                // Update chat messages for selected user
+                updateChat(userId);
+            });
+        });
+
+        // Dummy function to simulate sending a message
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const messageText = messageInput.value.trim();
+            if (messageText !== '') {
+                // Assuming 'me' sends the message
+                const message = { text: messageText, time: new Date().toLocaleTimeString(), sender: 'me' };
+                // Update messages array (simulating sending message to server)
+                const userId = document.querySelector('.block.active').getAttribute('data-user-id');
+                messages[userId].push(message);
+                // Update chat display
+                updateChat(userId);
+                // Clear message input
+                messageInput.value = '';
+            }
+        }
+    </script>
 </body>
+
 </html>
